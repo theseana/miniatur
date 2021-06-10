@@ -1,0 +1,6 @@
+file = open('bastani.txt', 'a')
+file.write('Prima\n')
+file.write('Symphony\n')
+file.write('Aroosaki\n')
+file.write('Prima Double Chocolate\n')
+file.close()

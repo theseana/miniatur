@@ -1,0 +1,32 @@
+boolean
+    true
+    false
+string
+    ''
+    ""
+    index
+    methods
+list
+    []
+    index
+dictionary
+    {}
+    key
+    value
+if
+    condition
+while
+    condition
+for 
+    range
+    string
+    list
+    repeat
+    iterate
+function
+    parameter
+    argument
+    return
+
+
+print() - int() - str() - input() 
