@@ -1,0 +1,18 @@
+[
+    {
+        "username": "maedeh",
+        "fullname": "Maedeh Ashouri",
+        "card": "61042332",
+        "password": "123",
+        "dob": "1400",
+        "balance": 1000000
+    },
+    {
+        "username": "sina",
+        "fullname": "Sina Bakhshandeh",
+        "card": "61046104",
+        "password": "123",
+        "dob": "1400",
+        "balance": 1000000
+    }
+]
