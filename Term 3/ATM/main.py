@@ -112,6 +112,28 @@ def main_menu():
     main_balance.set(file_json[p_index.get()]['balance'])
     root.deiconify()
 
+def get_cash():
+    def get():
+        file_json = read_json('list.json')
+        if file_json[p_index.get()]['balance'] > get_amount.get():
+            file_json[p_index.get()]['balance'] -= get_amount.get()
+            main_balance.set(file_json[p_index.get()]['balance'])
+            write_json('list.json', file_json)
+
+            g_cash.destroy()
+        else:
+            messagebox.showerror('Money Erro', 'Not Enough Money!')
+
+    g_cash = Toplevel()
+
+    Label(g_cash, text='Amount').grid(row=0, column=0)
+    get_amount = IntVar()
+    Entry(g_cash, textvariable=get_amount).grid(row=0, column=1)
+
+    Button(g_cash, text="Get Cash", bg="gray", activebackground="pink", activeforeground="white",
+        highlightthickness=0, command=get).grid(row=1, column=0, columnspan=2, sticky='NESW')
+    Button(g_cash, text="Back", bg="gray", activebackground="pink", activeforeground="white",
+        highlightthickness=0, command=g_cash.destroy).grid(row=2, column=0, columnspan=2, sticky='NESW')
 
 root = Tk()
 p_index = IntVar()
@@ -135,7 +157,7 @@ main_balance = StringVar()
 main_balance.set('$1000000')
 Label(lframe, textvariable=main_balance, fg='white', bg='black', font=('Times', 10)).grid(row=4, column=0)
 # ###
-Button(rframe, text="Get Cash", bg="gray", activebackground="pink",
+Button(rframe, text="Get Cash", bg="gray", activebackground="pink", command=get_cash,
        activeforeground="white", highlightthickness=0).grid(row=1, column=0, sticky='NESW')
 Button(rframe, text="Deposite", bg="gray", activebackground="pink",
        activeforeground="white", highlightthickness=0).grid(row=1, column=1, sticky='NESW')
